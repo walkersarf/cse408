@@ -9,14 +9,14 @@ const asyncHandler = require("express-async-handler");
 */
 
 //Importing the product model to the controller 
-const productModel = require("../models/product.model");
+const productModel = require("../models/product.models");
 
 //Importing the UUIDv4 Library
-const { v4: uuidv4 } = require('uuid')
+//const { v4: uuidv4 } = require('uuid')
 
 //Get all products async function 
 const get = asyncHandler(async (req, res) => {
-
+    console.log("GET request received")
     //Fetching all products from the database and assigning it to products
     const products = await productModel.find();
 
@@ -27,7 +27,7 @@ const get = asyncHandler(async (req, res) => {
     })
     //I use .reverse() function to get the latest datas at first  
 }
-);show()
+);
 
 //Get Single Product
 const show = asyncHandler(async (req, res) => {

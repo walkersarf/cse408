@@ -13,19 +13,19 @@ const { productSchema } = require("../middleware/validation.middleware");
 
 
 // Route for creating a product 
-router.post("products/create", productSchema, create);
+router.post("/create", productSchema, create);
 
 //Route to update a specfic product
-router.put("products/update/:id", productSchema, update);
+router.put("/update/:id", productSchema, update);
 
 //route to get all products
-router.get("products/get", get);
+router.get("/get", get);
 
 //route to get or show only a specfic product
-router.get("products/show/:id", show);
+router.get("/show/:id", show);
 
 //route to delete a specfic product
-router.delete("products/delete/:id", deleteProduct); 
+router.delete("/delete/:id", deleteProduct); 
 
 //Exporting the routes 
 module.exports = router;

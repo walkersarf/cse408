@@ -1,4 +1,5 @@
 // Importing the development support form utils/development.js 
+const { Db } = require("mongodb");
 const { printConsole } = require("../utils/development.js");
 
 //Importing the mongoose library used to make the mongodb connection
@@ -17,13 +18,9 @@ const connectToDB = async () => {
       );
 
       //creating the mongodb database connection by using MONOG_DB_URI
-      const DBConnection = await mongoose.connect("mongodb+srv://walkersarf:cr7tk8kb9@supply-chain.6oxukxh.mongodb.net/", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-  
+      const DBConnection = await mongoose.connect("mongodb+srv://walkersarf:cr7tk8kb9@supply-chain.6oxukxh.mongodb.net");
+      
       printConsole(
-        
         { data: `Database Connected : ${DBConnection.connection.host}` },
         { printLocation: "db_config.js:24" },
         {
